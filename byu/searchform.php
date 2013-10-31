@@ -1,4 +1,14 @@
-<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">    
-	<input type="text" placeholder="Search <?php echo get_bloginfo( 'name' ); ?>" value="" name="s" id="search" />
-	<input type="image" src="<?php echo get_stylesheet_directory_uri() . '/template/img/search-button.png' ?>" id="search-button" value="Search" />    
+<?php
+/**
+ * The template for displaying search forms in byu-responsive
+ *
+ * @package byu-responsive
+ */
+?>
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label>
+		<span class="screen-reader-text"><?php _ex( 'Search for:', 'label', 'byu-responsive' ); ?></span>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'byu-responsive' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+	</label>
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'byu-responsive' ); ?>">
 </form>

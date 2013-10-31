@@ -1,60 +1,102 @@
-<?php get_header(); ?>
-<div id="content" class="wrapper">
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package byu-responsive
+ */
 
-	<h1>
-		<?php if ( is_day() ) : /* if the daily archive is loaded */ ?>
-			<?php printf( __( 'Daily Archives: <span>%s</span>' ), get_the_date() ); ?>
-		<?php elseif ( is_month() ) : /* if the montly archive is loaded */ ?>
-			<?php printf( __( 'Monthly Archives: <span>%s</span>' ), get_the_date('F Y') ); ?>
-		<?php elseif ( is_year() ) : /* if the yearly archive is loaded */ ?>
-			<?php printf( __( 'Yearly Archives: <span>%s</span>' ), get_the_date('Y') ); ?>
-		<?php else : /* if anything else is loaded, ex. if the tags or categories template is missing this page will load */ ?>
-			Blog Archives
+get_header(); ?>
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+						if ( is_category() ) :
+							single_cat_title();
+
+						elseif ( is_tag() ) :
+							single_tag_title();
+
+						elseif ( is_author() ) :
+							/* Queue the first post, that way we know
+							 * what author we're dealing with (if that is the case).
+							*/
+							the_post();
+							printf( __( 'Author: %s', 'byu-responsive' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							/* Since we called the_post() above, we need to
+							 * rewind the loop back to the beginning that way
+							 * we can run the loop properly, in full.
+							 */
+							rewind_posts();
+
+						elseif ( is_day() ) :
+							printf( __( 'Day: %s', 'byu-responsive' ), '<span>' . get_the_date() . '</span>' );
+
+						elseif ( is_month() ) :
+							printf( __( 'Month: %s', 'byu-responsive' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+						elseif ( is_year() ) :
+							printf( __( 'Year: %s', 'byu-responsive' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+							_e( 'Asides', 'byu-responsive' );
+
+						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+							_e( 'Images', 'byu-responsive');
+
+						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+							_e( 'Videos', 'byu-responsive' );
+
+						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+							_e( 'Quotes', 'byu-responsive' );
+
+						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+							_e( 'Links', 'byu-responsive' );
+
+						else :
+							_e( 'Archives', 'byu-responsive' );
+
+						endif;
+					?>
+				</h1>
+				<?php
+					// Show an optional term description.
+					$term_description = term_description();
+					if ( ! empty( $term_description ) ) :
+						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					endif;
+				?>
+			</header><!-- .page-header -->
+
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php byu_responsive_content_nav( 'nav-below' ); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'no-results', 'archive' ); ?>
+
 		<?php endif; ?>
-	</h1>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<div class="post-single">
-			<h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumbnail">'; the_post_thumbnail(); echo '</div>'; } ?>
-			<p>
-				Written on <?php the_time('F j, Y'); ?> at <?php the_time() ?>, by <?php the_author_posts_link() ?>
-			</p>
-			<div class="post-excerpt">
-				<?php the_excerpt(); /* the excerpt is loaded to help avoid duplicate content issues */ ?>
-			</div>
-			
-			<div class="post-meta">
-				<p>
-					<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
-					<br />
-					Categories: <?php the_category(', ') ?>
-					<br />
-					<?php if (the_tags('Tags: ', ', ', ' ')); ?>
-				</p>
-			</div><!--.postMeta-->
-		</div><!--.post-single-->
-	<?php endwhile; else: ?>
-		<div class="no-results">
-			<p><strong>There has been an error.</strong></p>
-			<p>We apologize for any inconvenience, please <a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('description'); ?>">return to the home page</a> or use the search form below.</p>
-			<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
-		</div><!--noResults-->
-	<?php endif; ?>
-		
-	<nav class="oldernewer">
-		<div class="older">
-			<p>
-				<?php next_posts_link('&laquo; Older Entries') ?>
-			</p>
-		</div><!--.older-->
-		<div class="newer">
-			<p>
-				<?php previous_posts_link('Newer Entries &raquo;') ?>
-			</p>
-		</div><!--.older-->
-	</nav><!--.oldernewer-->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
-</div><!--#content-->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

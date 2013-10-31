@@ -1,96 +1,73 @@
-<div id="comments">
-	<!-- Prevents loading the file directly -->
-	<?php if(!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) : ?>
-	    <?php die('Please do not load this page directly or we will hunt you down. Thanks and have a great day!'); ?>
-	<?php endif; ?>
-	
-	<!-- Password Required -->
-	<?php if(!empty($post->post_password)) : ?>
-	    <?php if($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) : ?>
-	    <?php endif; ?>
-	<?php endif; ?>
-	
-	<?php if($comments) :
-			$i = 0;
+<?php
+/**
+ * The template for displaying Comments.
+ *
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to byu_responsive_comment() which is
+ * located in the inc/template-tags.php file.
+ *
+ * @package byu-responsive
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() )
+	return;
+?>
+
+<div id="comments" class="comments-area">
+
+	<?php // You can start editing here -- including this comment! ?>
+
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'byu-responsive' ),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			?>
+		</h2>
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'byu-responsive' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'byu-responsive' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'byu-responsive' ) ); ?></div>
+		</nav><!-- #comment-nav-above -->
+		<?php endif; // check for comment navigation ?>
+
+		<ol class="comment-list">
+			<?php
+				/* Loop through and list the comments. Tell wp_list_comments()
+				 * to use byu_responsive_comment() to format the comments.
+				 * If you want to override this in a child theme, then you can
+				 * define byu_responsive_comment() and that will be used instead.
+				 * See byu_responsive_comment() in inc/template-tags.php for more.
+				 */
+				wp_list_comments( array( 'callback' => 'byu_responsive_comment' ) );
+			?>
+		</ol><!-- .comment-list -->
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'byu-responsive' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'byu-responsive' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'byu-responsive' ) ); ?></div>
+		</nav><!-- #comment-nav-below -->
+		<?php endif; // check for comment navigation ?>
+
+	<?php endif; // have_comments() ?>
+
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<h3><?php comments_number('No comments', 'One comment', '% comments'); ?></h3>
-	    <ol>
-	    <?php foreach($comments as $comment) : ?>
-	    	<?php $comment_type = get_comment_type(); ?> <!-- checks for comment type -->
-	    	<?php if($comment_type == 'comment') { ?> <!-- outputs only comments -->
-		        <li id="comment-<?php comment_ID(); ?>" class="comment <?php if($i&1) { echo 'odd';} else {echo 'even';} ?> <?php $user_info = get_userdata(1); if ($user_info->ID == $comment->user_id) echo 'authorComment'; ?> <?php if ($comment->user_id > 0) echo 'user-comment'; ?>">
-		            <?php if ($comment->comment_approved == '0') : ?> <!-- if comment is awaiting approval -->
-		                <p class="waiting-for-approval">
-		                	<em>Your comment is awaiting approval.</em>
-		                </p>
-		            <?php endif; ?>
-		            <div class="comment-text">
-			            <?php comment_text(); ?>
-		            </div><!--.commentText-->
-		            <div class="comment-meta">
-		            	<?php edit_comment_link('Edit Comment', '', ''); ?>
-		            	<?php comment_type(); ?> by <?php comment_author_link(); ?> on <?php comment_date(); ?> at <?php comment_time(); ?>
-		            	<p class="gravatar"><?php if(function_exists('get_avatar')) { echo get_avatar($comment, '36'); } ?></p>
-		            </div><!--.commentMeta-->
-		        </li>
-			<?php } else { $trackback = true; } ?>
-	    <?php endforeach; ?>
-	    </ol>
-	    <?php if (isset($trackback) && $trackback == true) { ?><!-- checks for comment type: trackback -->
-	    <h3>Trackbacks</h3>
-		    <ol>
-		    	<!-- outputs trackbacks -->
-			    <?php foreach ($comments as $comment) : ?>
-				    <?php $comment_type = get_comment_type(); ?>
-				    <?php if($comment_type != 'comment') { ?>
-					    <li><?php comment_author_link() ?></li>
-				    <?php } ?>
-			    <?php endforeach; ?>
-		    </ol>
-	    <?php } ?>
-	<?php else : ?>
-	    <p></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'byu-responsive' ); ?></p>
 	<?php endif; ?>
-	
-	<div id="comments-form">
-		<span id="respond"></span>
-		<?php if(comments_open()) : ?>
-		    <?php if(get_option('comment_registration') && !$user_ID) : ?>
-		        <p>Our apologies, you must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p><?php else : ?>
-		        <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-		            <?php if($user_ID) : ?>
-		                <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></p>
-		            <?php else : ?>
-		            	<p>
-		            		Allowed HTML tags: <?php echo allowed_tags(); /* outputs the html tags that are allowed in comments */ ?>
-		            	</p>
-		                <p>
-							<label for="author"><small>Name <?php if($req) echo "(required)"; ?></small></label>
-							<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-		                </p>
-		                <p>
-		                	<label for="email"><small>Mail (will not be published) <?php if($req) echo "(required)"; ?></small></label>
-		                	<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-		                </p>
-		                <p>
-		                	<label for="url"><small>Website</small></label>
-		                	<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-		                </p>
-		            <?php endif; ?>
-		            <p>
-		            	<label for="comment"><small>Comment</small></label>
-		            	<textarea name="comment" id="comment" cols="99%" rows="10" tabindex="4"></textarea>
-		            </p>
-		            <p>
-		            	<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-		            	<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-		            </p>
-		            <?php do_action('comment_form', $post->ID); ?>
-		        </form>
-				<p><small>By submitting a comment you grant <?php bloginfo('name'); ?> a perpetual license to reproduce your words and name/web site in attribution. Inappropriate and irrelevant comments will be removed at an admin’s discretion. Your email is used for verification purposes only, it will never be shared.</small></p>
-		    <?php endif; ?>
-		<?php else : ?>
-		    <p></p>
-		<?php endif; ?>
-	</div><!--#commentsForm-->
-</div><!--#comments-->
+
+	<?php comment_form(); ?>
+
+</div><!-- #comments -->

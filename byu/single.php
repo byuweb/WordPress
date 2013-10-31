@@ -1,71 +1,31 @@
-<?php get_header(); ?>
-<?php 
-if ( is_active_sidebar( 'sidebar-left' ) && ( is_active_sidebar( 'sidebar-right' ) ))
-$sidebar = "two-sidebars";
-else if (is_active_sidebar('sidebar-left') || (is_active_sidebar('sidebar-right')) )
-$sidebar = "one-sidebar";
-else
-$sidebar ='';
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package byu-responsive
+ */
 
-if (is_active_sidebar('sidebar-left') && !is_active_sidebar('sidebar-right'))
-$align = "omega";
-?>
-<div id="content" class="wrapper <?php echo $sidebar?>">	
-	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	
-	<h1><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-	<?php edit_post_link('<p>Edit this entry</p>'); ?>
-	<?php get_sidebar('left'); ?>
-	
-	<div id="main-content" class="<?php echo $align?>">
-	<?php //if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+get_header(); ?>
 
-			<article>
-				<?php /*?><h1><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-<?php */?>				
-				<?php // edit_post_link('<small>Edit this entry</small>','',''); ?>
-				<?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumbnail">'; the_post_thumbnail(); echo '</div>'; } ?>
-				<div class="post-content">
-					<?php the_content(); ?>
-					<?php wp_link_pages('before=<div class="pagination">&after=</div>'); ?>
-				</div><!--.post-content-->
-			<article>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-			<div id="post-meta">
-				<p>
-					Posted on <?php the_time('F j, Y'); ?> at <?php the_time() ?>
-				</p>
-				<p>
-					Categories: <?php the_category(', ') ?>
-					<br />
-					<?php the_tags('Tags: ', ', ', ' '); ?>
-				</p>
-			</div><!--#post-meta-->
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		</div><!-- #post-## -->
+			<?php get_template_part( 'content', 'single' ); ?>
 
-		<div class="newer-older">
-			<div class="older">
-				<p>
-					<?php previous_post_link('%link', '&laquo; Previous post') ?>
-				</p>
-			</div><!--.older-->
-			<div class="newer">
-				<p>
-					<?php next_post_link('%link', 'Next Post &raquo;') ?>
-				</p>
-			</div><!--.older-->
-		</div><!--.newer-older-->
+			<?php byu_responsive_content_nav( 'nav-below' ); ?>
 
-		<?php //comments_template( '', true ); ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() )
+					comments_template();
+			?>
 
-	<?php endwhile; /* end loop */ ?>
-    
-   </div><!--#main-content-->
+		<?php endwhile; // end of the loop. ?>
 
-		<?php  get_sidebar('right'); ?> 
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-</div><!--#content-->
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,45 +1,26 @@
-<footer>
-	<div id="footer-links">
-		<div class="wrapper">
-			
-			
-			<?php if ( is_active_sidebar( 'footer-sidebar-1' ) ) : ?>
-			<div class="col alpha">
-				<?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
-			</div>
-			<?php endif; ?>	
-			
-				
-				
-			<?php if ( is_active_sidebar( 'footer-sidebar-2' ) ) : ?>
-			<div class="col">
-				<?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
-			</div>
-			<?php endif; ?>	
-			
-			<?php if ( is_active_sidebar( 'footer-sidebar-3' ) ) : ?>
-			<div class="col">	
-				<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
-			</div>
-			<?php endif; ?>
-			
-			<?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
-			<div class="col">	
-				<?php dynamic_sidebar( 'footer-sidebar-4' ); ?>
-			</div>
-			<?php endif; ?>
-			
-			<?php if ( is_active_sidebar( 'footer-sidebar-5' ) ) : ?>
-			<div class="col omega">	
-				<?php dynamic_sidebar( 'footer-sidebar-5' ); ?>
-			</div>
-			<?php endif; ?>
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after
+ *
+ * @package byu-responsive
+ */
+?>
 
-			<?php wp_footer(); /* this is used by many Wordpress features and plugins to work properly */ ?>
-		</div>
-	</div>
-	<div id="footer-bottom">
-		<p><a href="http://home.byu.edu/home/copyright">Copyright&#169; <?php echo date("Y"); ?>, All Rights Reserved</a></p>
-	</div>
-</footer>
-</body></html>
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<?php do_action( 'byu_responsive_credits' ); ?>
+			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'byu-responsive' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'byu-responsive' ), 'byu-responsive', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
+</html>

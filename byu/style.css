@@ -1,11 +1,10 @@
 /*
-Theme Name: BYU Templates
+Theme Name: BYU Template
 Theme URI: http://web.byu.edu/resources
 Description: The BYU theme for WordPress.
 Author: BYU Web Community
 Author URI: http://web.byu.edu/
-Version: 1.1
-Tags: blue, white, custom-header, custom-background, custom-menu
+Version: 2.0
+Tags: responsive, blue, white, custom-header, custom-background, custom-menu
 
 */
-@include template/css/style.css
