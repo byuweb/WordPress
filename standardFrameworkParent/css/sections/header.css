@@ -1,0 +1,42 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Header
+*/
+
+
+/* Old Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-639		single column
+640-1023	2 columns
+1024+		standard layout, but changing margins/padding/type-size
+1800+		extra large layout
+
+*/
+
+/* Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-374		2 columns
+375-639		6 columns
+640-1023	12 columns
+1024-1439	12 columns
+1440+		12 columns
+
+*/
+
+/* Wordpress Admin Bar Height-Change Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-782		46px tall
+783-...		32px tall
+
+*/
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+header {
+	position: relative;
+	z-index: 9999;
+	background-color: #fff;
+}
+.page-header .container {
+	max-width: 100%;
+}

@@ -1,0 +1,134 @@
+{
+    "key": "group_58d9595d5d72e",
+    "title": "Header",
+    "fields": [
+        {
+            "key": "field_58d95135651d8",
+            "label": "Site Title",
+            "name": "site_title",
+            "type": "text",
+            "instructions": "This field will populate the site title across all pages in the top BYU ribbon.\r\n(ie. The title in the top left, after BYU.)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Site Name",
+            "placeholder": "Type here",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58d95e87eb1de",
+            "label": "Display Header Sub-Navigation",
+            "name": "display_header_sub-navigation",
+            "type": "true_false",
+            "instructions": "Check this box if you would like a sub-navigation menu within the header, under the BYU ribbon.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display Menu",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_58d95f0f56ae9",
+            "label": "Sub-navigation",
+            "name": "sub-navigation",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58d95e87eb1de",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Row",
+            "min": 1,
+            "max": 16,
+            "layouts": [
+                {
+                    "key": "58d95f1f8f3a4",
+                    "name": "link_information",
+                    "label": "Link information",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58d961a022a15",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_58d961b022a16",
+                            "label": "URL",
+                            "name": "url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site_options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1491514982
+}
