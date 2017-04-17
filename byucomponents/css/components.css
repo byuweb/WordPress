@@ -1,0 +1,46 @@
+html{
+	width: 100vw;
+	min-width:100vw;
+	max-width: 100vw; 
+	margin: 0;
+	height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+	min-width:100vw;
+	max-width: 100vw; 
+	margin: 0;
+}
+
+.site-content {
+    flex: 1;
+}
+
+
+.byu-ribbon__search__submit {
+	display: none !important;
+}
+.byu-ribbon__search .byu-ribbon__search__text-box {
+	padding: 5px 10px;
+	height: 30px;
+	border: none;
+	box-sizing: border-box;
+}
+.mobile-view .byu-ribbon__search .byu-ribbon__search__text-box {
+	padding: 5px 10px;
+	width: 100%;
+	height: 35px;
+	border: none;
+	border-bottom: 1px solid #c5c5c5;
+}
+button#search-button {
+	background-color: var(--byu-search-color,#767676);
+	border: 1px solid var(--byu-search-color,#767676);
+	color: #fff;
+	height: 34px !important;
+}
+
