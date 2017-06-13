@@ -8,10 +8,12 @@ Index Page
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 			
-			<p>The content you were looking for does not exist.</p>
-
-			<a href="<?php echo esc_url( get_site_url() ); ?>">Home Page</a>
-
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+			<?php endwhile; ?>
+			<?php endif; ?>
+			
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
