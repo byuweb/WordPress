@@ -23,8 +23,8 @@ function pgsf_enqueue_byu_web_components() {
 	$theme_directory = get_template_directory_uri();
 
 	wp_enqueue_style( 'BYU_core-fonts', 'https://cloud.typography.com/75214/7683772/css/fonts.css' );
-	wp_enqueue_script( 'BYU_core-components-js', 'https://cdn.byu.edu/2017-core-components/latest/2017-core-components.min.js' );
-	wp_enqueue_style( 'BYU_core-components-css', 'https://cdn.byu.edu/2017-core-components/latest/2017-core-components.css' );
+	wp_enqueue_script( 'BYU_core-components-js', 'https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.js' );
+	wp_enqueue_style( 'BYU_core-components-css', 'https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.css' );
 	wp_enqueue_style( 'BYU_fa-css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'BYU_core-components-extra-css', $theme_directory . '/css/components.css' );
 }
