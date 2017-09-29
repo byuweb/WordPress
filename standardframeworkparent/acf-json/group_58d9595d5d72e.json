@@ -1,0 +1,484 @@
+[
+    {
+        "key": "group_58d9595d5d72e",
+        "title": "BYU Header",
+        "fields": [
+            {
+                "key": "field_58d95135651d8",
+                "label": "BYU Site Title",
+                "name": "site_title",
+                "type": "text",
+                "instructions": "This field will populate the site title across all pages in the top BYU ribbon.\r\n(ie. The title in the top left, after BYU.)",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Site Name",
+                "placeholder": "Type here",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_58d95e87eb1de",
+                "label": "Display BYU Header Menu",
+                "name": "display_byu_header_menu",
+                "type": "true_false",
+                "instructions": "Check this box if you would like a sub-navigation menu within the header, under the BYU ribbon.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Display Menu",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_58d95f0f56ae9",
+                "label": "BYU Header Menu",
+                "name": "byu_header_menu",
+                "type": "flexible_content",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_58d95e87eb1de",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layouts": {
+                    "58d95f1f8f3a4": {
+                        "key": "58d95f1f8f3a4",
+                        "name": "menu_link",
+                        "label": "Menu Link",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_58d961a022a15",
+                                "label": "Text",
+                                "name": "text",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_58e7c29c6e603",
+                                "label": "Type",
+                                "name": "type",
+                                "type": "radio",
+                                "instructions": "Select the type of link",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "internal": "Internal",
+                                    "external": "External"
+                                },
+                                "allow_null": 0,
+                                "other_choice": 0,
+                                "save_other_choice": 0,
+                                "default_value": "Internal",
+                                "layout": "vertical",
+                                "return_format": "value"
+                            },
+                            {
+                                "key": "field_58d961b022a16",
+                                "label": "Url",
+                                "name": "url",
+                                "type": "url",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_58e7c29c6e603",
+                                            "operator": "==",
+                                            "value": "external"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_58e7c36c44e33",
+                                "label": "Relative Url",
+                                "name": "relative_url",
+                                "type": "text",
+                                "instructions": "Include only the part of the url that comes after the domain name.<br>\r\nie. if you want to link to the root of the site just enter \"\/\" as the link.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_58e7c29c6e603",
+                                            "operator": "==",
+                                            "value": "internal"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "\/",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "598893d2846c3": {
+                        "key": "598893d2846c3",
+                        "name": "menu_hover",
+                        "label": "Menu Hover",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_598896f350d01",
+                                "label": "Text",
+                                "name": "text",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_59889405846c4",
+                                "label": "Post Type",
+                                "name": "post_type",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                },
+                "button_label": "Add Menu Item",
+                "min": 1,
+                "max": 16
+            },
+            {
+                "key": "field_5984cb924e5b4",
+                "label": "Display Ad",
+                "name": "display_ad",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_58d95e87eb1de",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_5984cbc64e5b5",
+                "label": "Header Ad",
+                "name": "header_ad",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5984cb924e5b4",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 1,
+                "max": 1,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5984cbf44e5b6",
+                        "label": "Image",
+                        "name": "image",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_5984cc1f4e5b7",
+                        "label": "Ad Link",
+                        "name": "ad_link",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_591363bf7dba2",
+                "label": "Display Login",
+                "name": "display_login",
+                "type": "true_false",
+                "instructions": "Check this box to display the login or logout option in the header",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_59135149e9001",
+                "label": "Display Search",
+                "name": "display_search",
+                "type": "true_false",
+                "instructions": "Check this box to display the search bar in the header",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_591354510cd11",
+                "label": "Select Type Of Header",
+                "name": "select_type_of_header",
+                "type": "radio",
+                "instructions": "Check the box of the type of header you would like to display. If it contains a sub-title or super-title a new field will appear to fill with your chosen text",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "header_only": "Header only",
+                    "header_with_sub-title": "Header with sub-title",
+                    "header_with_super-title": "Header with super-title",
+                    "header_with_ italicized_sub-title": "Header with Italicized sub-title",
+                    "header_with_ italicized_super-title": "Header with Italicized super-title"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "",
+                "layout": "vertical",
+                "return_format": "value"
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5977598a02352",
+            "label": "Select Header Width",
+            "name": "select_header_width",
+            "type": "radio",
+            "instructions": "Select whether to display the BYU header across the full width of the page, or across the standard width.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "standard_width": "Standard Width",
+                "full_width": "Full Width"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "standard_width",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "key": "field_5913571ec8d52",
+                "label": "Sub-title or super-title text",
+                "name": "sub-title_or_super-title_text",
+                "type": "text",
+                "instructions": "If you have selected to use a sub-title or super-title enter your text here.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_591354510cd11",
+                            "operator": "==",
+                            "value": "header_with_sub-title"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_591354510cd11",
+                            "operator": "==",
+                            "value": "header_with_super-title"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_591354510cd11",
+                            "operator": "==",
+                            "value": "header_with_ italicized_sub-title"
+                        }
+                    ],
+                    [
+                        {
+                            "field": "field_591354510cd11",
+                            "operator": "==",
+                            "value": "header_with_ italicized_super-title"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site_options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

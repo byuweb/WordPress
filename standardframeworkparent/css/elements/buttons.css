@@ -1,0 +1,74 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Buttons
+	- Turqoise
+- Text Area
+	- Black
+*/
+
+
+/* Old Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-639		single column
+640-1023	2 columns
+1024+		standard layout, but changing margins/padding/type-size
+1800+		extra large layout
+
+*/
+
+/* Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-374		2 columns
+375-639		6 columns
+640-1023	12 columns
+1024-1439	12 columns
+1440+		12 columns
+
+*/
+
+/* Wordpress Admin Bar Height-Change Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-782		46px tall
+783-...		32px tall
+
+*/
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*.button {
+	font-family: 'Gotham SSm A','Gotham SSm B';
+}
+
+/* Turqoise * /
+.button.button__turquoise {
+	border-radius: 0px;
+	background-color: #38a0b2;
+	color: #FFF;
+	border: none;
+	max-width: 200px;
+	font-weight: 500;
+}
+.button.button__turquoise:hover {
+	color: #000;
+}
+
+/* Text Area
+–––––––––––––––––––––––––––––––––––––––––––––––––– * /
+.text-area {
+	font-family: "Gotham A", "Gotham B";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	color: #000;
+	letter-spacing: 0px;
+	margin: 0;
+}
+/* Black * /
+.text-area.text-area__black {
+	border-radius: 0px;
+}
+input:-webkit-autofill.text-area.text-area__black {
+    -webkit-box-shadow: 0 0 0px 1000px #0D0D0D inset;
+    -webkit-text-fill-color: white !important;
+}*/
