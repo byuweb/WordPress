@@ -1,0 +1,389 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Icons
+- Icons - standard two state
+- Icons - preset centering adjustments
+- Media Icons
+- Media Icons - Circled
+- Media Icons with Tooltip
+*/
+
+
+/* Old Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-639		single column
+640-1023	2 columns
+1024+		standard layout, but changing margins/padding/type-size
+1800+		extra large layout
+
+*/
+
+/* Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-374		2 columns
+375-639		6 columns
+640-1023	12 columns
+1024-1439	12 columns
+1440+		12 columns
+
+*/
+
+/* Wordpress Admin Bar Height-Change Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-782		46px tall
+783-...		32px tall
+
+*/
+
+
+/* Icons
+
+Sample usage:
+<div class="*__icon-wrap">
+	<a class="icon icon--circle icon--outlined">
+		<img class="icon__image icon__image--disabled" src="<?php echo esc_url( get_bloginfo( 'stylesheet_directory' ) . '/images/Media_Listen_Unavailable.svg' );?>" alt="Audio not available">
+		<img class="icon__image" src="<?php echo esc_url( get_bloginfo( 'stylesheet_directory' ) . '/images/Media_Listen_Available.svg' );?>" alt="Listen Audio">
+	</a>
+</div>
+
+Sample usage with tool tip:
+<div class="*__icon-wrap">
+	<a class="icon icon--circle icon--outlined">
+		<img class="icon__image icon__image--disabled" src="<?php echo esc_url( get_bloginfo( 'stylesheet_directory' ) . '/images/Media_Listen_Unavailable.svg' );?>" alt="Audio not available">
+		<img class="icon__image" src="<?php echo esc_url( get_bloginfo( 'stylesheet_directory' ) . '/images/Media_Listen_Available.svg' );?>" alt="Listen Audio">
+		<div class="tool-tip">
+			<span class="tool-tip__text">My tool Tip text</span>
+		</div>
+	</a>
+</div>
+
+Notes:
+1) the "*__icon-wrap" class should define the height and width the icon should take up.
+2) Both images (enabled and disabled) should be included inside the anchor tag
+3) If using a tool tip make sure to include it within the anchor tag
+
+Available Classes:
+.icon
+.icon--hover-settings-1 (DEFAULT)
+.icon--hover-settings-2 (Variation on hovering scheme)
+.icon--hover-settings-3 (Variation on hovering scheme)
+.icon--disabled (Shows the state-one image, and disables interactive hovering changes)
+.icon--outlined (Adds an outline shape to the icon)
+.icon--circle (Changes hover area and outline to a circle)
+.icon--square (DEFAULT, Changed hover area and outline to a square)
+.icon--turn-clockwise (DEFAULT, when using other turn classes the icon will turn clockwise)
+.icon--turn-cclockwise (when using other turn classes the icon will turn counterclockwise)
+.icon--turn-90 (turn the icon 90 degrees in the specified direction)
+.icon--turn-180 (turn the icon 180 degrees in the specified direction)
+.icon--turn-270 (turn the icon 270 degrees in the specified direction)
+.icon--turn-360 (turn the icon 360 degrees in the specified direction)
+.icon__image
+.icon__image--disabled (label for the disabled image to be shown)
+.icon__image--enabled (DEFAULT, label for the enabled image to be shown)
+
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon {
+	cursor: pointer;
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+	z-index: 100;
+}
+.icon--outlined {
+	border: 1px solid #979797;
+}
+.icon--outlined:hover, .icon--outlined.hover {
+	border: 1px solid #002E5D;
+}
+.icon--outlined .icon__image {
+	width: 46%;
+	height: 46%;
+	left: 27%;
+	top: 27%;
+}
+.icon--circle {
+	border-radius: 50%;
+}
+.icon--square {
+	border-radius: 0%;
+}
+.icon--turn-clockwise {}
+.icon--turn-cclockwise {}
+.icon--turn-clockwise.icon--turn-90, .icon--turn-90 {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.icon--turn-clockwise.icon--turn-180, .icon--turn-180 {
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.icon--turn-clockwise.icon--turn-270, .icon--turn-270 {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+.icon--turn-clockwise.icon--turn-360, .icon--turn-360 {
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.icon--turn-cclockwise.icon--turn-90 {
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.icon--turn-cclockwise.icon--turn-180 {
+    -ms-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.icon--turn-cclockwise.icon--turn-270 {
+    -ms-transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    transform: rotate(-270deg);
+}
+.icon--turn-cclockwise.icon--turn-360 {
+    -ms-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+}
+
+.icon__image {
+	max-width: 100%;
+	max-height: 100%;
+	width: 54%;
+	height: 54%;
+	left: 19%;
+	top: 19%;
+	position: absolute;
+}
+
+/* Standard two state
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon--std-two-state .icon__image--disabled,
+.icon--std-two-state .icon__image--enabled {
+	display: initial;
+}
+.icon--std-two-state {}
+.icon--std-two-state .icon__image1 {
+	opacity: 1;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.icon--std-two-state .icon__image2 {
+	opacity: 0;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+.icon--std-two-state.icon--state-two .icon__image1 {
+	opacity: 0;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.icon--std-two-state.icon--state-two .icon__image2 {
+	opacity: 1;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+/* Disabled settings
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon--disabled.icon {
+	cursor: default;
+	z-index: initial;
+}
+.icon--disabled.icon--outlined:hover {
+	border: 1px solid #E5E5E5;
+}
+.icon--disabled .icon__image--enabled {
+	display: none;
+}
+.icon--disabled .icon__image--disabled {
+	display: initial;
+}
+
+/* hover settings 2 */
+/* (1) Ovveride default */
+.icon--hover-settings-2.icon {
+	cursor: pointer;
+}
+.icon--hover-settings-2.icon--outlined:hover {
+	border: 1px solid #E5E5E5;
+}
+
+/* (2) Set new parameters */
+.icon--hover-settings-2.icon--hover-state-1 { /* All grey */
+	border: 1px solid #E5E5E5;
+}
+.icon--hover-settings-2.icon--hover-state-1:hover, .icon--hover-settings-2.icon--hover-state-1.hover {
+	border: 1px solid #002E5D;
+}
+.icon--hover-settings-2.icon--hover-state-1 .icon__image--enabled {
+	display: none;
+}
+.icon--hover-settings-2.icon--hover-state-1 .icon__image--disabled {
+	display: initial;
+}
+.icon--hover-settings-2.icon--hover-state-2 { /* All teal */
+	border: 1px solid #002E5D;
+}
+.icon--hover-settings-2.icon--hover-state-2:hover, .icon--hover-settings-2.icon--hover-state-2.hover {
+	border: 1px solid #E5E5E5;
+}
+.icon--hover-settings-2.icon--hover-state-2 .icon__image--enabled {
+	display: initial;
+}
+.icon--hover-settings-2.icon--hover-state-2 .icon__image--disabled {
+	display: none;
+}
+.icon--hover-settings-2.icon--hover-state-2 {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/* hover settings 3 */
+/* (1) Ovveride default */
+.icon--hover-settings-3.icon {
+	cursor: pointer;
+}
+.icon--hover-settings-3.icon--outlined:hover {
+	border: 1px solid #E5E5E5;
+}
+
+/* (2) Set new parameters */
+.icon--hover-settings-3.icon--hover-state-1 { /* All grey */
+	border: 1px solid #002E5D;
+}
+.icon--hover-settings-3.icon--hover-state-1:hover, .icon--hover-settings-3.icon--hover-state-1.hover {
+	border: 1px solid #E5E5E5;
+}
+.icon--hover-settings-3.icon--hover-state-1 .icon__image--enabled {
+	display: none;
+}
+.icon--hover-settings-3.icon--hover-state-1 .icon__image--disabled {
+	display: initial;
+}
+.icon--hover-settings-3.icon--hover-state-2 { /* All teal */
+	border: 1px solid #E5E5E5;
+}
+.icon--hover-settings-3.icon--hover-state-2:hover, .icon--hover-settings-3.icon--hover-state-2.hover {
+	border: 1px solid #002E5D;
+}
+.icon--hover-settings-3.icon--hover-state-2 .icon__image--enabled {
+	display: initial;
+}
+.icon--hover-settings-3.icon--hover-state-2 .icon__image--disabled {
+	display: none;
+}
+.icon--hover-settings-3.icon--hover-state-2 {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/* Icons - preset centering adjustments
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon--play .icon__image {
+	left: 32%;
+}
+.icon--headphones .icon__image {}
+.icon--text .icon__image {}
+.icon--download .icon__image {}
+.icon--share-social .icon__image {}
+.icon--arrow .icon__image {}
+
+
+/* Media Icons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.media-icons {
+	padding: .33333rem 0;
+	display: flex;
+	box-sizing: border-box;
+	justify-content: space-between;
+}
+.media-icons.media-icons__large {
+	width: 200px;
+}
+.media-icons.media-icons__small {
+	width: 150px;
+}
+.media-icon {
+	width: 28px;
+	height: 28px;
+	float: left;
+}
+.media-icon img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.media-icon__listen {}
+.media-icon__read {}
+.media-icon__watch {}
+.media-icon__large .media-icon__circled {
+	width: 60px;
+	height: 60px;
+}
+.media-icons__small .media-icon__circled {
+	width: 40px;
+	height: 40px;
+}
+
+/* Media Icons - Circled
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.media-icons__circled {}
+.media-icon__circled {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;
+}
+.media-icon__circled:last-child {
+	margin-right: 0;
+}
+.media-icon__circled img {
+	max-width: 100%;
+	max-height: 100%;
+    width: 46%;
+    height: 46%;
+    left: 27%;
+    top: 27%;
+    position: absolute;
+}
+.media-icon__circled a {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #E5E5E5;
+	border-radius: 50%;
+	box-sizing: border-box;
+
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.media-icon__circled.media-icon__available a:hover {
+	border: 1px solid #002E5D;
+}
+.media-icon__circled.media-icon__listen {}
+.media-icon__circled.media-icon__read {}
+.media-icon__circled.media-icon__watch {}

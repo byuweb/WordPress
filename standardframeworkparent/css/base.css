@@ -1,0 +1,768 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Base Styles
+- Typography
+  - Standard Body Copy
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+*/
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 75% so that all the REM measurements
+are based on 12px sizing. So basically 1.5rem = 18px */
+html {
+  font-size: 75%;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-size: 1.5rem; /* currently ems cause chrome bug misinterpreting rems on body element */
+  /*line-height: 1.6;*/
+  overflow-x: hidden;
+  position: relative;
+}
+figure {
+  line-height: 0px;
+}
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	line-height: 1.4;
+}
+
+h1 { font-size: 3.333333333rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+p {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 33px;
+  margin-bottom: 35px;
+  color: black;
+}*/
+
+/* Standard Body Copy */
+/**.standard-body-copy,
+.standard-body-copy p,
+.standard-body-copy span {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #141414;
+  margin: 22px 0px 10px;
+  letter-spacing: -.08px;
+}
+.standard-body-copy b,
+.standard-body-copy strong {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 500;
+}
+.standard-body-copy img {
+  max-width: 100%;
+}
+.standard-body-copy h1 + p,
+.standard-body-copy h2 + p,
+.standard-body-copy h3 + p,
+.standard-body-copy h4 + p,
+.standard-body-copy h5 + p,
+.standard-body-copy h6 + p {
+  margin-top: 0px;
+}
+.standard-body-copy h1,
+.standard-body-copy h2,
+.standard-body-copy h3,
+.standard-body-copy h4,
+.standard-body-copy h5,
+.standard-body-copy h6 {
+  color: #141414;
+}
+.standard-body-copy h1 {
+  font-family: Vitesse A,Vitesse B,Georgia,serif;
+  font-size: 30px;
+  line-height: 28px;
+  font-weight: 400;
+  margin: 45px 0px 17px;
+}
+.standard-body-copy h2 {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+  margin: 35px 0px 9px;
+  letter-spacing: -.2px;
+}
+.standard-body-copy h3 {
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 500;
+  color: #002E5D;
+  margin: 35px 0px 9px;
+}
+.standard-body-copy h4 {
+  font-size: 18px;
+  line-height: 20px;
+  font-family: "Gotham A", "Gotham B";
+  font-style: italic;
+  font-weight: 400;
+  margin: 35px 0px 9px;
+}
+.standard-body-copy h5 {
+  font-size: 16px;
+  line-height: 18px;
+  margin: 35px 0px 9px;
+}
+.standard-body-copy h6 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #767676;
+  margin: 35px 0px 9px;
+}
+
+@media (min-width: 640px) {
+  .standard-body-copy,
+  .standard-body-copy p,
+  .standard-body-copy span {
+    font-family: "Gotham A", "Gotham B";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 35px;
+    color: black;
+    margin: 22px 0px 31px;
+    letter-spacing: -.08px;
+  }
+  .standard-body-copy h1 {
+    font-size: 60px;
+    line-height: 50px;
+    margin: 70px 0px 30px;
+  }
+  .standard-body-copy .extra-with-h1 {
+    margin-top: 70px;
+  }
+  .standard-body-copy h2 {
+    font-size: 33px;
+    line-height: 40px;
+    margin: 50px 0px 16px;
+    letter-spacing: -.2px;
+  }
+  .standard-body-copy .extra-with-h2 {
+    margin-top: 50px;
+  }
+  .standard-body-copy h3 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 40px 0px 10px;
+  }
+  .standard-body-copy .extra-with-h3 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h4 {
+    font-size: 25px;
+    line-height: 29px;
+    margin: 40px 0px 10px;
+  }
+  .standard-body-copy .extra-with-h4 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h5 {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 40px 0px 10px;
+  }
+  .standard-body-copy .extra-with-h5 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h6 {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 40px 0px 10px;
+  }
+  .standard-body-copy .extra-with-h6 {
+    margin-top: 40px;
+  }
+}**/
+
+
+/* Standard Body Copy */
+.standard-body-copy,
+.standard-body-copy p,
+.standard-body-copy span {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #141414;
+  letter-spacing: -.08px;
+}
+/* Styling and Positioning */
+.standard-body-copy p,
+.standard-body-copy span,
+.standard-body-copy ol,
+.standard-body-copy ul {
+  margin: 22px 0px 0px;
+}
+.standard-body-copy .extra-with-p {
+  margin-top: 22px;
+}
+.standard-body-copy .extra-with-span {
+  margin-top: 22px;
+}
+.standard-body-copy b,
+.standard-body-copy strong {
+  font-weight: 500;
+}
+.standard-body-copy i,
+.standard-body-copy em {
+  font-style: italic;
+}
+.standard-body-copy a {
+  color: #002E5D;
+  border-bottom: 1px solid #002E5D;
+}
+.standard-body-copy a:hover {
+  color: #66B200;
+  border-bottom: 1px solid #66B200;
+}
+.standard-body-copy ul {
+  padding-left: 20px;
+}
+.standard-body-copy ol {
+  padding-left: 20px;
+}
+.standard-body-copy blockquote {
+  margin: 30px 30px;
+}
+.standard-body-copy .pull-quote .pull-quote__inner-wrap {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.standard-body-copy figure {
+
+}
+.standard-body-copy figure figcaption {
+
+}
+.standard-body-copy code {
+  display: flex;
+  border: 1px solid #C5C5C5;
+  box-shadow: 0px 0px 2px #C5C5C5;
+}
+.standard-body-copy code span {
+  display: block;
+  margin: 0;
+}
+.standard-body-copy code .code__line-numbers span:nth-child(odd),
+.standard-body-copy code .code__code-lines span:nth-child(odd) {
+  background: #E5E5E5;
+}
+.standard-body-copy code .code__line-numbers {
+  width: 30px;
+  text-align: center;
+  border-right: 1px solid #002E5D;
+}
+
+.standard-body-copy code .code__code-lines {
+  width: calc(100% - 30px);
+}
+.standard-body-copy code .code__code-lines span {
+  padding: 0px 10px;
+}
+.standard-body-copy h1,
+.standard-body-copy h2,
+.standard-body-copy h3,
+.standard-body-copy h4,
+.standard-body-copy h5,
+.standard-body-copy h6 {
+  color: #141414;
+}
+.standard-body-copy img {
+  max-width: 100%;
+  width: 100%;
+}
+.standard-body-copy h1 {
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  color: #002E5D;
+  letter-spacing: -.5px;
+  line-height: 35px;
+  margin: 23px 0px 0px;
+}
+.standard-body-copy .extra-with-h1 {
+  margin-top: 45px;
+}
+.standard-body-copy h2 {
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+  margin: 35px 0px 0px;
+  letter-spacing: -.2px;
+}
+.standard-body-copy .extra-with-h2 {
+  margin-top: 35px;
+}
+.standard-body-copy h3 {
+  font-size: 20px;
+  line-height: 22px;
+  font-family: "Gotham A", "Gotham B";
+  font-style: normal;
+  font-weight: 500;
+  color: #002E5D;
+  margin: 35px 0px 0px;
+}
+.standard-body-copy .extra-with-h3 {
+  margin-top: 35px;
+}
+.standard-body-copy h4 {
+  font-size: 18px;
+  line-height: 20px;
+  font-family: "Gotham A", "Gotham B";
+  font-style: italic;
+  font-weight: 400;
+  margin: 35px 0px 0px;
+}
+.standard-body-copy .extra-with-h4 {
+  margin-top: 35px;
+}
+.standard-body-copy h5 {
+  font-size: 16px;
+  line-height: 18px;
+  margin: 35px 0px 0px;
+}
+.standard-body-copy .extra-with-h5 {
+  margin-top: 35px;
+}
+.standard-body-copy h6 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #767676;
+  margin: 35px 0px 0px;
+}
+.standard-body-copy .extra-with-h6 {
+  margin-top: 35px;
+}
+
+/* Styling and Positioning -- Changes because of what comes before the element in the DOM */
+.standard-body-copy h1 + p,
+.standard-body-copy .extra-after-h1,
+.standard-body-copy .extra-after-h1 + p,
+.standard-body-copy h1 + ol,
+.standard-body-copy .extra-after-h1,
+.standard-body-copy .extra-after-h1 + ol,
+.standard-body-copy h1 + ul,
+.standard-body-copy .extra-after-h1,
+.standard-body-copy .extra-after-h1 + ul {
+  margin-top: 17px;
+}
+.standard-body-copy h2 + p,
+.standard-body-copy .extra-after-h2,
+.standard-body-copy .extra-after-h2 + p,
+.standard-body-copy h2 + ol,
+.standard-body-copy .extra-after-h2,
+.standard-body-copy .extra-after-h2 + ol,
+.standard-body-copy h2 + ul,
+.standard-body-copy .extra-after-h2,
+.standard-body-copy .extra-after-h2 + ul {
+  margin-top: 9px;
+}
+.standard-body-copy h3 + p,
+.standard-body-copy .extra-after-h3,
+.standard-body-copy .extra-after-h3 + p,
+.standard-body-copy h3 + ol,
+.standard-body-copy .extra-after-h3,
+.standard-body-copy .extra-after-h3 + ol,
+.standard-body-copy h3 + ul,
+.standard-body-copy .extra-after-h3,
+.standard-body-copy .extra-after-h3 + ul {
+  margin-top: 9px;
+}
+.standard-body-copy h4 + p,
+.standard-body-copy .extra-after-h4,
+.standard-body-copy .extra-after-h4 + p,
+.standard-body-copy h4 + ol,
+.standard-body-copy .extra-after-h4,
+.standard-body-copy .extra-after-h4 + ol,
+.standard-body-copy h4 + ul,
+.standard-body-copy .extra-after-h4,
+.standard-body-copy .extra-after-h4 + ul {
+  margin-top: 9px;
+}
+.standard-body-copy h5 + p,
+.standard-body-copy .extra-after-h5,
+.standard-body-copy .extra-after-h5 + p,
+.standard-body-copy h5 + ol,
+.standard-body-copy .extra-after-h5,
+.standard-body-copy .extra-after-h5 + ol,
+.standard-body-copy h5 + ul,
+.standard-body-copy .extra-after-h5,
+.standard-body-copy .extra-after-h5 + ul {
+  margin-top: 9px;
+}
+.standard-body-copy h6 + p,
+.standard-body-copy .extra-after-h6,
+.standard-body-copy .extra-after-h6 + p,
+.standard-body-copy h6 + ol,
+.standard-body-copy .extra-after-h6,
+.standard-body-copy .extra-after-h6 + ol,
+.standard-body-copy h6 + ul,
+.standard-body-copy .extra-after-h6,
+.standard-body-copy .extra-after-h6 + ul {
+  margin-top: 9px;
+}
+/* breakpoint specific changes */
+@media (min-width: 0px) and (max-width: 400px) {
+  .standard-body-copy .body-copy-extra.ssm-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+@media (min-width: 401px) and (max-width: 639px) {
+  .standard-body-copy .body-copy-extra.sm-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+@media (min-width: 640px) and (max-width: 799px) {
+  .standard-body-copy .body-copy-extra.med-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1023px) {
+  .standard-body-copy .body-copy-extra.mlg-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .standard-body-copy .body-copy-extra.lg-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+@media (min-width: 1440px) {
+  .standard-body-copy .body-copy-extra.xlg-parent-width {
+    margin: 22px 0px 0px;
+  }
+}
+
+@media (min-width: 640px) {
+  .standard-body-copy,
+  .standard-body-copy p,
+  .standard-body-copy span {
+    font-family: "Gotham A", "Gotham B";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 35px;
+    color: black;
+    letter-spacing: -.08px;
+  }
+  /* Styling and Positioning */
+  .standard-body-copy p,
+  .standard-body-copy span,
+  .standard-body-copy ol,
+  .standard-body-copy ul {
+    margin: 22px 0px 0px;
+  }
+  .standard-body-copy .extra-with-p {
+    margin-top: 22px;
+  }
+  .standard-body-copy .extra-with-span {
+    margin-top: 22px;
+  }
+  .standard-body-copy ul {
+    padding-left: 40px;
+  }
+  .standard-body-copy ol {
+    padding-left: 40px;
+  }
+  .standard-body-copy blockquote {
+    margin: 40px 60px;
+  }
+  .standard-body-copy .pull-quote .pull-quote__inner-wrap {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .standard-body-copy h1 {
+    font-size: 50px;
+    letter-spacing: -.5px;
+    margin: 70px 0px 0px;
+    line-height: 49px;
+  }
+  .standard-body-copy .extra-with-h1 {
+    margin-top: 70px;
+  }
+  .standard-body-copy h2 {
+    font-size: 33px;
+    line-height: 40px;
+    margin: 50px 0px 0px;
+    letter-spacing: -.2px;
+  }
+  .standard-body-copy .extra-with-h2 {
+    margin-top: 50px;
+  }
+  .standard-body-copy h3 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 40px 0px 0px;
+  }
+  .standard-body-copy .extra-with-h3 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h4 {
+    font-size: 25px;
+    line-height: 29px;
+    margin: 40px 0px 0px;
+  }
+  .standard-body-copy .extra-with-h4 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h5 {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 40px 0px 0px;
+  }
+  .standard-body-copy .extra-with-h5 {
+    margin-top: 40px;
+  }
+  .standard-body-copy h6 {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 40px 0px 0px;
+  }
+  .standard-body-copy .extra-with-h6 {
+    margin-top: 40px;
+  }
+  /* Styling and Positioning -- Changes because of what comes before the element in the DOM */
+  .standard-body-copy h1 + p,
+  .standard-body-copy .extra-after-h1,
+  .standard-body-copy .extra-after-h1 + p {
+    margin-top: 30px;
+  }
+  .standard-body-copy h2 + p,
+  .standard-body-copy .extra-after-h2,
+  .standard-body-copy .extra-after-h2 + p {
+    margin-top: 16px;
+  }
+  .standard-body-copy h3 + p,
+  .standard-body-copy .extra-after-h3,
+  .standard-body-copy .extra-after-h3 + p {
+    margin-top: 10px;
+  }
+  .standard-body-copy h4 + p,
+  .standard-body-copy .extra-after-h4,
+  .standard-body-copy .extra-after-h4 + p {
+    margin-top: 10px;
+  }
+  .standard-body-copy h5 + p,
+  .standard-body-copy .extra-after-h5,
+  .standard-body-copy .extra-after-h5 + p {
+    margin-top: 10px;
+  }
+  .standard-body-copy h6 + p,
+  .standard-body-copy .extra-after-h6,
+  .standard-body-copy .extra-after-h6 + p {
+    margin-top: 10px;
+  }
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0;
+}
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0;
+}
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 28px 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit * /
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+/* Removes awkward default styles on some inputs for iOS * /
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #38a0b2;
+  outline: 0;
+}
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal;
+}
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2rem; }
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Embeds
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Positioning
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+div {
+  position: relative;
+  box-sizing: border-box;
+}
