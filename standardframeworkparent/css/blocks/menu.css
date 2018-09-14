@@ -55,13 +55,8 @@
 	text-align: left;
 	z-index: 5000;
 	box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.50);
-<<<<<<< HEAD
 	-webkit-transition: all 0s linear .15s;
 	transition: all 0s linear .15s;
-=======
-	-webkit-transition: all 0s linear .25s;
-	transition: all 0s linear .25s;
->>>>>>> ccaa8d9ba48aa4d019470fd402f6b369d94014a8
 	cursor: default;
 }
 .nav-menu:hover .menu {
