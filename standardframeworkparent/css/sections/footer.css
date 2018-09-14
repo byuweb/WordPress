@@ -1,0 +1,467 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- BYU Footer 1
+- Font Awesome With Tool Tip
+*/
+
+
+/* Old Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-639		single column
+640-1023	2 columns
+1024+		standard layout, but changing margins/padding/type-size
+1800+		extra large layout
+
+*/
+
+/* Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-374		2 columns
+375-639		6 columns
+640-1023	12 columns
+1024-1439	12 columns
+1440+		12 columns
+
+*/
+
+/* Wordpress Admin Bar Height-Change Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-782		46px tall
+783-...		32px tall
+
+*/
+
+
+/* BYU Footer 1 OLD
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*footer.byu-footer .row {
+	display: block;
+}
+.byu-footer {
+	background-color: #002E5D;
+	color: white;
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	font-family: "HCo Ringside Narrow SSm";
+	font-style: normal;
+	font-weight: 500;
+}
+.byu-footer .container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.byu-footer__row-1 {
+	font-size: 1.166666rem;
+	margin-bottom: 2.5rem;
+}
+.byu-footer__row-2 {
+	text-align: center;
+	font-size: 1rem;
+	padding: 0 2.5rem;
+}
+#byu-footer__col-1 {
+	padding: 0 4rem 3rem;
+}
+#byu-footer__col-1 img {
+	max-width: 260px;
+	margin: auto;
+	display: block;
+}
+#byu-footer__col-2 {}
+#byu-footer__col-3 {}
+#byu-footer__col-4 {}
+#byu-footer__col-4 ul li {
+	display: initial;
+}
+.byu-footer__links {
+	padding: 0 3rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.byu-footer__links ul {
+	list-style-type: none;
+	line-height: 1.5rem;
+}
+.byu-footer h6, {
+	text-transform: uppercase;
+}
+.byu-footer h6,
+.byu-footer li {
+	font-size: .8333333rem;
+	margin: 0;
+}
+.byu-footer .fa {
+	font-size: 3.3rem;
+	margin-right: .333333rem;
+}
+.byu-footer__line-break__white {
+	width: 140px;
+	border-bottom: 1px solid white;
+	display: block;
+	margin: .833333rem 0px;
+}
+.byu-footer__extra-link {
+	text-transform: uppercase;
+	margin: 1rem 1.33333rem 0rem 0rem;
+}
+#byu-footer__extra-link__follow {
+	display: block;
+}
+@media (max-width: 479px) {
+	.byu-footer .container {
+		width: 300px;
+	}
+}
+@media (min-width: 480px) {
+
+}
+@media (min-width: 480px) and (max-width: 639px) {
+	#byu-footer__col-2,
+	#byu-footer__col-3 {
+		width: 50%;
+	}
+	#byu-footer__col-4 {
+		text-align: center;
+	}
+}
+@media (max-width: 639px) {
+	#byu-footer__col-4 ul {
+		margin-top: 1rem;
+	}
+	.byu-footer__row-2 span {
+		width: 300px;
+		display: block;
+		margin: auto;
+	}
+}
+@media (min-width: 510px) {
+	#byu-footer__col-2,
+	#byu-footer__col-3 {
+		padding: 0 3rem 0 4rem;
+	}
+}
+@media (min-width: 540px) {
+	#byu-footer__col-2,
+	#byu-footer__col-3 {
+		padding: 0 3rem 0 4.5rem;
+	}
+}
+@media (min-width: 580px) {
+	#byu-footer__col-2,
+	#byu-footer__col-3 {
+		padding: 0 3rem 0 5.5rem;
+	}
+}
+@media (min-width: 640px) {
+	.byu-footer__links {
+		text-align: left;
+	}
+	.byu-footer__row-1 {
+		font-size: .833333rem;
+	}
+	.byu-footer__extra-link {
+		display: block;
+	}
+	.byu-footer__links {
+		padding: 0 1.5rem;
+	}
+	.byu-footer__extra-link {
+		margin: 0rem 0rem 1.1rem;
+	}
+	#byu-footer__col-4 {
+		text-align: left;
+	}
+	.byu-footer__row-1 {
+		margin-bottom: 4.5rem;
+	}
+}
+@media (min-width: 830px) {
+	.byu-footer__links {
+		padding: 0 3rem;
+	}
+}
+@media (min-width: 900px) {
+	.byu-footer__links {
+		padding: 0 4rem;
+	}
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+	#byu-footer__col-1 {
+		width: 100%;
+	}
+	#byu-footer__col-2,
+	#byu-footer__col-3,
+	#byu-footer__col-4 {
+		width: 33%;
+	}
+}
+@media (min-width: 1024px) {
+	.byu-footer__links {
+		padding: 0 4rem;
+	}
+	#byu-footer__col-1 {
+		padding: 0 1.5rem;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1439px) {}
+@media (min-width: 1440px) {
+	.byu-footer__links {
+		padding: 0 5rem;
+	}
+}
+
+/* Beginning of new CSS */
+
+.byu-footer {
+	padding: 0;
+	background-color: #002E5D;
+	color: white;
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	font-family: "HCo Ringside Narrow SSm";
+	font-style: normal;
+	font-weight: 500;
+}
+
+.byu-footer .container {
+	padding: 0;
+}
+
+.byu-footer ul {
+	list-style-type: none;
+}
+
+.byu-footer li {
+	font-family: "HCo Ringside Narrow SSm";
+	font-size: 16px;
+	color: #767676;
+	line-height: 37px;
+	font-weight: 300;
+}
+
+.byu-footer li a {
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+.byu-footer li a:hover {
+	color: #002E5D;
+	cursor: pointer;
+}
+
+#byu-footer__col-4 ul li {
+	display: initial;
+	margin-right: 10px;
+}
+
+.byu-footer__top {
+	background: #E5E5E5;
+	padding-top: 40px;
+}
+
+.byu-footer__bottom {
+	height: 80px;
+	display: flex;
+}
+
+.byu-footer__bottom .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.byu-footer__line-break {
+	width: 90%;
+	border-bottom: 1px solid #979797;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.byu-footer h6 {
+	font-family: "Vitesse A", "Vitesse B";
+	font-size: 20px;
+	color: #002E5D;
+	line-height: 30px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.byu-footer .fa {
+	font-size: 26px;
+	color: #002E5D;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 26px;
+	text-align: center;
+	padding: 6px;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+	position: relative
+}
+.byu-footer .fa:hover {
+	color:#ffffff;
+	background-color:#002E5D;
+	border: 2px solid #002E5D;
+	border-radius: 50%;
+	width: 26px;
+	text-align: center;
+	padding: 6px;
+}
+
+#contact-info p {
+	font-family: "HCo Ringside Narrow SSm";
+	font-size: 16px;
+	font-weight: 300;
+	color: #767676;
+	line-height: 21px;
+	font-style: normal;
+	margin: 0;
+}
+
+#byu-footer__give-to-org {
+	display: none;
+	background: #767676;
+	border: 1px solid #979797;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+	font-family: "Vitesse A", "Vitesse B";
+	font-size: 20px;
+	color: #FFFFFF;
+	margin-top: 35px;
+	text-align: center;
+	padding: 0;
+	line-height: 45px;
+	height: 45px;
+	text-transform: none;
+	width: 225px;
+	letter-spacing: 0;
+}
+
+footer [class*='col-'] {
+	border-right: none;
+}
+
+.byu-footer__row-2 {
+	font-family: "HCo Ringside Narrow SSm";
+	font-size: 12px;
+	line-height: 25px;
+	font-weight: 300;
+}
+
+.byu-footer__row-2 span {
+	width: 100%;
+	text-align: center;
+	size: 10px;
+}
+
+.byu-footer__row-2 a {
+	margin: auto;
+}
+
+.byu-footer-wordmark-wrap {
+	line-height: 0;
+}
+
+.byu-footer-wordmark {
+	width: 400px;
+	height: 15px;
+	margin: auto;
+	line-height: 18px;
+}
+
+.byu-footer__extra-link {
+	display: block;
+	font-family: "HCo Ringside Narrow SSm";
+	font-weight: 300;
+	color: #767676;
+	font-size: 14px;
+	line-height: 30px;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear;
+	-o-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+.byu-footer__extra-link:hover {
+	color: #002E5D;
+}
+
+.byu-footer__extra-link.no-link {
+	color: #767676 !important;
+}
+
+#byu-footer__col-4 ul {
+	margin-bottom: 0;
+	display: flex;
+}
+
+@media (max-width: 1439px) {
+	.byu-footer h6 {
+		font-size: 17px;
+	}
+
+	.byu-footer__line-break {
+		width: 100%;
+	}
+
+	#contact-info p {
+		font-size: 14px;
+	}
+
+	.byu-footer li {
+		font-size: 14px;
+	}
+
+	.byu-footer__extra-link {
+		font-size: 14px;
+		line-height: 30px;
+	}
+
+	.byu-footer__row-2 {
+		font-size: 10px;
+	}
+
+	#byu-footer__give-to-org {
+		width: 200px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.byu-footer__top {
+		height: initial;
+		padding-bottom: 25px;
+	}
+
+	#byu-footer__give-to-org {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 639px) {
+	.byu-footer__bottom {
+		height: 70px;
+	}
+
+	.byu-footer-wordmark {
+		width: 280px;
+		height: 12px;
+	}
+
+	#byu-footer__give-to-org {
+		margin-bottom: 30px;
+	}
+}
+
+/* Font Awesome With Tool Tip
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.fa .tool-tip {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+}

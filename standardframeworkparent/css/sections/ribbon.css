@@ -1,0 +1,326 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- BYU Ribbon 1
+- BYU Ribbon 2
+- Overlay
+- Overlay Search
+*/
+
+/* Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-374		2 columns
+375-639		6 columns
+640-1023	12 columns
+1024-1439	12 columns
+1440+		12 columns
+
+*/
+
+/* Wordpress Admin Bar Height-Change Breakpoints
+––––––––––––––––––––––––––––––––––––––––––––––––––
+0-782		46px tall
+783-...		32px tall
+
+*/
+
+
+/* BYU Ribbon 1
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.byu-ribbon-1 {
+	background-color: #002255;
+}
+.byu-ribbon-1__logo {
+	display: block;
+	width: 200px;
+	height: 28px;
+	background-image: url('../images/BYU_Wordmark.svg');
+	background-repeat: no-repeat;
+	background-position: -5px center;
+}
+
+@media (min-width: 680px) {
+	.byu-ribbon-1 {
+		height: 38px;
+	}
+	.byu-ribbon-1__logo {
+		width: 240px;
+		height: 38px;
+		background-position: -3px center;
+	}
+}
+
+/* BYU Ribbon 2
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.byu-ribbon-2 .container {
+	width: calc(100% - 1.75rem);
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* BYU Ribbon Left */
+.byu-ribbon-2 {
+	background-color: #002E5D;
+	height: 62px;
+}
+.byu-ribbon-2__logo {
+	display: block;
+	width: 80px;
+	height: 62px;
+	background-image: url('../images/BYU_Monogram_white.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* BYU Ribbon Center */
+.byu-ribbon-2__site-title {
+	position: absolute;
+	top: 0px;
+	line-height: 62px;
+	text-align: center;
+	width: 200px;
+	left: calc(50% - 100px);
+	font-family: "HCo Ringside Narrow SSm";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.333333rem;
+	letter-spacing: .005rem;
+	color: #FFF;
+}
+
+/* BYU Ribbon Right */
+.byu-ribbon-2__right-objects-container {
+	position: absolute;
+	top: 0px;
+	line-height: 62px;
+	text-align: center;
+	right: 0px;
+
+	color: #FFF;
+}
+
+/* Nav Menu */
+.byu-ribbon__nav-menu {
+	float: right;
+	position: relative;
+	padding: 0 8px;
+	transition-delay: 0.5s;
+}
+.byu-ribbon__nav-menu__menu-icon {
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: "HCo Ringside Narrow SSm";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 1.333333rem;
+	letter-spacing: .005rem;
+}
+
+/* Search Area */
+.byu-ribbon__search {
+	float: right;
+	height: 62px;
+	margin:0px;
+	padding: 11px 0px;
+	box-sizing: border-box;
+}
+.byu-ribbon__search__text-box {
+	float: left;
+	color: #000;
+	margin: 0px;
+	width: 225px;
+	font-family: "HCo Ringside Narrow SSm";
+}
+.byu-ribbon__search .byu-ribbon__search__submit {
+	font-family: FontAwesome;
+	color: #FFF;
+	border: none;
+	font-size: 1.5rem;
+	font-weight: 100;
+	float: left;
+	margin: 0px;
+	padding: 0px 12px 0px 15px;
+}
+.byu-ribbon__search .byu-ribbon__search__submit:hover,
+.byu-ribbon__search .byu-ribbon__search__submit:focus {
+	color: #FFF;
+}
+
+@media (min-width: 640px) {
+	/* BYU Ribbon Left */
+	.byu-ribbon-2 {}
+	.byu-ribbon-2__logo {
+		background-position: center;
+	}
+
+	/* BYU Ribbon Center */
+	.byu-ribbon-2__site-title {}
+
+	/* BYU Ribbon Right */
+	.byu-ribbon-2__right-objects-container {}
+
+	/* Nav Menu */
+	.byu-ribbon__nav-menu {}
+	.byu-ribbon__nav-menu__menu-icon {}
+
+	/* Search Area */
+	.byu-ribbon__search {}
+	.byu-ribbon__search__text-box {}
+	.byu-ribbon__search__submit {}
+}
+
+@media (min-width: 1024px) {
+	/* BYU Ribbon Left */
+	.byu-ribbon-2 {
+		height: 48px;
+	}
+	.byu-ribbon-2__logo {
+		width: 400px;
+		height: 48px;
+		background-image: url('../images/BYU_Combined_Mark_Horizontal_white.svg');
+		background-position: center;
+	}
+
+	/* BYU Ribbon Center */
+	.byu-ribbon-2__site-title {
+		line-height: 48px;
+	}
+
+	/* BYU Ribbon Right */
+	.byu-ribbon-2__right-objects-container {
+		padding-right: 5px;
+	}
+
+	/* Nav Menu */
+	.byu-ribbon__nav-menu {
+		line-height: 48px;
+	}
+	.byu-ribbon__nav-menu__menu-icon {}
+
+	/* Search Area */
+	.byu-ribbon__search {
+		height: 48px;
+		padding: 5px 0px;
+	}
+	.byu-ribbon__search__text-box {}
+	.byu-ribbon__search__submit {}
+}
+
+@media (min-width: 1440px) {
+	/* BYU Ribbon Left */
+	.byu-ribbon-2 {}
+	.byu-ribbon-2__logo {}
+	.byu-ribbon-2 .container {}
+
+	/* BYU Ribbon Center */
+	.byu-ribbon-2__site-title {}
+
+	/* BYU Ribbon Right */
+	.byu-ribbon-2__right-objects-container {}
+
+	/* Nav Menu */
+	.byu-ribbon__nav-menu {}
+	.byu-ribbon__nav-menu__menu-icon {}
+
+	/* Search Area */
+	.byu-ribbon__search {}
+	.byu-ribbon__search__text-box {}
+	.byu-ribbon__search__submit {}
+}
+
+
+/* Overlay
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.overlay {
+	position: absolute;
+	z-index: 50000;
+	opacity: .95;
+	box-sizing: border-box;
+}
+.overlay__sm {
+	width: 200px;
+	height: 200px;
+	left: calc(50% - 100px);
+	top: calc(50% - 100px);
+	padding: 15px;
+}
+.overlay__med {
+	width: 400px;
+	height: 400px;
+	left: calc(50% - 200px);
+	top: calc(50% - 200px);
+	padding: 15px;
+}
+.overlay__lg {
+	width: 600px;
+	height: 600px;
+	left: calc(50% - 300px);
+	top: calc(50% - 300px);
+	padding: 15px;
+}
+.overlay--fullscreen {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.overlay--dark {
+	background-color: #0D0D0D;
+}
+.overlay__light {
+	background-color: #232323;
+}
+.overlay__rounded {
+	border-radius: 20px;
+}
+.overlay__exit {
+	font-family: FontAwesome;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 25px;
+	width: 25px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+/* WP admin bar (logged-in) fixes */
+.logged-in .overlay__exit {
+	top: calc(48px + 5px);
+}
+@media (min-width: 783px) {
+	.logged-in .overlay__exit {
+		top: calc(32px + 5px);
+	}
+}
+
+
+
+/* Overlay Search
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.overlay-search {}
+.overlay-search__form {
+	width: 300px;
+	margin: 150px auto;
+	text-align: center;
+}
+.overlay-search__form .overlay-search__text-box {
+	width: 90%;
+	background: #0D0D0D;
+	color: #FFF;
+}
+.overlay-search__submit {
+	width: 120px;
+}
+
+/* WP admin bar (logged-in) fixes */
+.logged-in .overlay-search__form {
+	margin-top: calc(48px + 150px);
+}
+@media (min-width: 783px) {
+	.logged-in .overlay-search__form {
+		margin-top: calc(32px + 150px);
+	}
+}

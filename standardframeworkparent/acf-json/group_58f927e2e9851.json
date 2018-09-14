@@ -1,0 +1,105 @@
+{
+    "key": "group_58f927e2e9851",
+    "title": "SF Custom Page Builder",
+    "fields": [
+        {
+            "key": "field_58f927f3f1f93",
+            "label": "Custom Page Builder",
+            "name": "custom_page_editor",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Section",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "58f927f8e0768",
+                    "name": "body_copy",
+                    "label": "Body Copy",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5907b5541ffde",
+                            "label": "Clone",
+                            "name": "clone",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5907b50e01349"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "5914d0a0a37e9",
+                    "name": "insert_custom_section",
+                    "label": "Insert Custom Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5914d0bca37ea",
+                            "label": "Section Name",
+                            "name": "section_name",
+                            "type": "text",
+                            "instructions": "Insert the name of the Custom Section you wish to place here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "sf_tools:page-builder"
+            }
+        ]
+    ],
+    "menu_order": -5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1494896703
+}

@@ -1,0 +1,33 @@
+/* Table of Contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Accordion
+*/
+
+/* Accordion
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.accordion {
+	max-width: 100%;
+}
+.accordion__item {}
+.accordion__item--closed {}
+.accordion__item--open {}
+.accordion__item__title-bar {}
+.accordion__item__main-toggle {
+	cursor: pointer;
+}
+.accordion__item__toggle {
+	cursor: pointer;
+}
+.accordion__item__title-area {
+	overflow: hidden;
+}
+.accordion__item__content {
+	overflow: hidden;
+}
+.accordion__item--open .accordion__item__content {
+	max-height: initial;
+}
+.accordion__item--closed .accordion__item__content {
+	max-height: 0;
+	visibility: hidden;
+}
