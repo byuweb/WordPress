@@ -1,0 +1,3 @@
+[submodule "standardFrameworkParent"]
+	path = standardFrameworkParent
+	url = https://github.com/PG-BYU/standardFrameworkParent.git
